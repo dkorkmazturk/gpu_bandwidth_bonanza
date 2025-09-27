@@ -36,20 +36,20 @@ gpu_bandwidth_bonanza is a command-line utility designed to benchmark and analyz
 ## Understanding the Output
 The output is organized into several sections for clarity.
 
-1. API Enumeration
+### API Enumeration
 The initial sections (Vulkan, D3D12, CUDA, NVML) list all compatible graphics devices found on the system. The tool indicates which devices are selected for the benchmark. This part is useful for verifying that your hardware is correctly detected and for inspecting properties like UUIDs, LUIDs, and the status of NVLink bridges.
 
-2. Benchmarks
+### Benchmarks
 This is a flat list of the raw transfer speed measurements for every tested transfer path, reported in gigabytes per second (GiB/s).
 
-3. Results
+### Results
 This final section provides a summarized and visualized analysis of the benchmark data.
 
-### ASCII Chart
+#### ASCII Chart
 A bar chart that visually compares the most critical transfer speeds (GPU-to-GPU and GPU-to-Host) across the three tested APIs. It's great for an at-a-glance performance comparison.
 
-### Transfer Speed Matrices
+#### Transfer Speed Matrices
 These tables provide a complete overview of the transfer performance between all pairs of resources (host, dev 0, dev 1). You can quickly find the transfer speed from any source (row) to any destination (column).
 
-### Transfer Speed Symmetry Rating
+#### Transfer Speed Symmetry Rating
 This metric indicates how uniform the performance is between corresponding paths (e.g., dev 0 ⟶ dev 1 vs. dev 1 ⟶ dev 0). A score closer to zero is better, signifying a more balanced or symmetrical system. A high score suggests an asymmetry that might be worth investigating.
